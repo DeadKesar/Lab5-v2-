@@ -18,6 +18,7 @@ private:
 	void MoreMemory(int size);
 	void LessMemory();
 	void SortPath(int start, int length);
+	void AlternativeSortPath(int leftIndex, int rightIndex, int length);
 	void FillTempArr(int tempArr[], int baseIndex, int tempIndex, int length);
 public:
 	Vector();
@@ -32,15 +33,13 @@ public:
 	void Replace(int num, int index);
 	void AddRange(int* arr, int length);
 	int Length();
-	void PrintArr(int size, const int NUMBERS_IN_STRING = 10);
-
-	void MergeSort(int start, int length);
-	void AlternativeMergeSort(int start, int length);
-	void AlternativeSortPath(int leftIndex, int rightIndex, int length);
-	void BobleSort(int size);
+	void PrintArr(const int size, const int NUMBERS_IN_STRING = 10);
+	void MergeSort(const int start, const int length);
+	void AlternativeMergeSort(int start, const int length);
+	void BobleSort(const int size);
 	void BobleSortTest(int size);
-	void RadixSort(int pow);
-	void BlockSort(int rangeOfValues);
-	void BlockSortUseSTD(int rangeOfValues);
+	void RadixSort(const int RANGE);
+	void BlockSort(const int rangeOfValues);
+	void BlockSortUseSTD(const int rangeOfValues);
 };
 

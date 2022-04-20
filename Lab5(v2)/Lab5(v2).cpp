@@ -27,12 +27,11 @@ int main()
 		vecSTD.push_back(engine() % RANGE);
 	}
 	clock_t curent = clock();
-
-	clock_t timer2 = clock();
-	FillArray(myVector, SIZE, RANGE, engine);
-	clock_t curent2 = clock();
 	double stdVectorTime = static_cast<double>(curent - timer) / CLOCKS_PER_SEC;
-	double myVectorTime = static_cast<double>(curent2 - timer2) / CLOCKS_PER_SEC;
+	timer = clock();
+	FillArray(myVector, SIZE, RANGE, engine);
+	curent = clock();
+	double myVectorTime = static_cast<double>(curent - timer) / CLOCKS_PER_SEC;
 	std::cout << stdVectorTime << " - время генерации стандартного вектора" << std::endl;
 	std::cout << myVectorTime << " - время генерации самодельного вектора" << std::endl;
 	vecSTD.clear();

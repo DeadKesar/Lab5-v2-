@@ -1,7 +1,6 @@
 #include "Vector.h"
 #include <vector>
 
-//Private:
 void Vector::RestructVector(int newSize)
 {
 	if (newSize < 8)
@@ -63,7 +62,6 @@ void Vector::LessMemory()
 		}
 	}
 }
-//public:
 Vector::Vector() : size(8), length(0)
 {
 	this->array = new int[size];
@@ -251,7 +249,7 @@ void Vector::FillTempArr(int tempArr[], int baseIndex, int tempIndex, int length
 		baseIndex++;
 	}
 }
-void Vector::AlternativeMergeSort(int start, int length)
+void Vector::AlternativeMergeSort(const int start, const int length)
 {
 	for (int curentLength = 2; curentLength < length; curentLength *= 2)
 	{
@@ -311,7 +309,7 @@ void Vector::AlternativeSortPath(int leftIndex, int rightIndex, int length)
 	}
 	delete[] tempArr;
 }
-void Vector::BobleSort(int size)
+void Vector::BobleSort(const int size)
 {
 	int temp = 0;
 	bool isSorted = true;
@@ -326,7 +324,6 @@ void Vector::BobleSort(int size)
 				temp = array[j];
 				array[j] = array[j + 1];
 				array[j + 1] = temp;
-				//std::cout << temp << "hoop!";
 			}
 		}
 		if (isSorted)
@@ -335,7 +332,7 @@ void Vector::BobleSort(int size)
 		}
 	}
 }
-void Vector::RadixSort(int RANGE)
+void Vector::RadixSort(const int RANGE)
 {
 	int counter = 0, range = RANGE;
 	while (range > 0)
@@ -360,7 +357,7 @@ void Vector::RadixSort(int RANGE)
 	}
 }
 
-void Vector::BlockSort(int rangeOfValues)
+void Vector::BlockSort(const int rangeOfValues)
 {
 	int buckets = this->length / 4;
 	Vector* vectors = new Vector[buckets + 1];
@@ -385,7 +382,7 @@ void Vector::BlockSort(int rangeOfValues)
 	}
 
 }
-void Vector::BobleSortTest(int size)
+void Vector::BobleSortTest(const int size)
 {
 	int temp = 0;
 	bool isSorted = true;
@@ -409,7 +406,7 @@ void Vector::BobleSortTest(int size)
 		}
 	}
 }
-void Vector::BlockSortUseSTD(int rangeOfValues)
+void Vector::BlockSortUseSTD (const int rangeOfValues)
 {
 	int buckets = this->length / 4;
 	std::vector<int>* vectors = new std::vector <int>[buckets + 1];
@@ -435,7 +432,7 @@ void Vector::BlockSortUseSTD(int rangeOfValues)
 
 }
 
-void BobleSortForVector(int size, std::vector <int> vect)
+void BobleSortForVector(const int size, std::vector <int> vect)
 {
 	int temp = 0;
 	bool isSorted = true;
@@ -450,7 +447,6 @@ void BobleSortForVector(int size, std::vector <int> vect)
 				temp = vect[j];
 				vect[j] = vect[j + 1];
 				vect[j + 1] = temp;
-				//std::cout << temp << "hoop!";
 			}
 		}
 		if (isSorted)
