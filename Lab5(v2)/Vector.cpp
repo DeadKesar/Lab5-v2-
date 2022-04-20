@@ -370,8 +370,6 @@ void Vector::BlockSort(int rangeOfValues)
 	for (int i = 0; i < this->length; i++)
 	{
 		vectors[this->array[i] / range].Push(this->array[i]);
-		//if (i%1000 == 0)
-		//std::cout << " " << i<< " " << this->array[i]<< std::endl;
 	}
 	for (int i = 0; i < buckets + 1; i++)
 	{
@@ -411,6 +409,32 @@ void Vector::BobleSortTest(int size)
 		}
 	}
 }
+void Vector::BlockSortUseSTD(int rangeOfValues)
+{
+	int buckets = this->length / 4;
+	std::vector<int>* vectors = new std::vector <int>[buckets + 1];
+	int range = rangeOfValues / buckets;
+	if (range == 0)
+		range = 1;
+	for (int i = 0; i < this->length; i++)
+	{
+		vectors[this->array[i] / range].push_back(this->array[i]);
+	}
+	for (int i = 0; i < buckets + 1; i++)
+	{
+		BobleSortForVector(vectors[i].size(), vectors[i]);
+	}
+	for (int i = 0, count = 0; i < buckets + 1; i++)
+	{
+		for (int j = 0; j < vectors[i].size(); j++)
+		{
+			this->array[count] = vectors[i][j];
+			count++;
+		}
+	}
+
+}
+
 void BobleSortForVector(int size, std::vector <int> vect)
 {
 	int temp = 0;

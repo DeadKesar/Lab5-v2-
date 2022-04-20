@@ -6,7 +6,7 @@
 #include <random>
 #include <math.h>
 
-
+void BobleSortForVector(int size, std::vector <int> vect);
 class Vector
 {
 private:
@@ -41,5 +41,6 @@ public:
 	void BobleSortTest(int size);
 	void RadixSort(int pow);
 	void BlockSort(int rangeOfValues);
+	void BlockSortUseSTD(int rangeOfValues);
 };
 
